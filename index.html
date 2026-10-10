@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>404 SOCIETY — Wear Your Identity</title>
+<meta name="description" content="Contemporary essentials for those who define their own style.">
+<meta property="og:title" content="404 SOCIETY"><meta property="og:description" content="Wear Your Identity">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://sdk.cashfree.com/js/v3/cashfree.js"></script>
+<style>
+:root{--bg:#fff;--fg:#111;--mut:#767676;--line:#e7e7e7;--tile:#efede9}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 12px/1.6 Inter,Helvetica,Arial,sans-serif;letter-spacing:.04em;text-transform:uppercase}
+a{color:inherit;text-decoration:none}button{font:inherit;letter-spacing:inherit;text-transform:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0}
+:focus-visible{outline:2px solid var(--fg);outline-offset:3px}
+header{position:sticky;top:0;z-index:20;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:18px 24px;background:rgba(255,255,255,.96)}
+header nav{display:flex;gap:24px}header nav.r{justify-content:flex-end}
+.logo{font-size:15px;font-weight:500;letter-spacing:.32em}
+main{min-height:70vh}
+.hero{height:78vh;min-height:420px;background:var(--tile);display:flex;flex-direction:column;justify-content:flex-end;padding:0 24px 40px}
+.hero h1{margin:0 0 18px;font-weight:400;font-size:clamp(34px,7vw,92px);line-height:1;letter-spacing:.02em}
+.link{border-bottom:1px solid var(--fg);padding-bottom:2px;width:max-content}
+.bar{display:flex;justify-content:space-between;padding:28px 24px 14px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px 6px;padding:0 6px 64px}
+@media(min-width:900px){.grid{grid-template-columns:repeat(4,1fr)}}
+.tile{display:block}.tile .img{aspect-ratio:3/4;background:var(--tile);display:grid;place-items:center;color:#cfcbc4;font-size:44px;letter-spacing:.1em;overflow:hidden}
+.tile img,.pimg img{width:100%;height:100%;object-fit:cover;display:block}
+.tile .meta{display:flex;justify-content:space-between;gap:12px;padding:10px 6px 0}.tile .meta span:last-child{color:var(--mut)}
+.pd{display:grid;grid-template-columns:1fr;gap:0}
+@media(min-width:900px){.pd{grid-template-columns:1.3fr 1fr}.pd .info{position:sticky;top:60px;align-self:start}}
+.pimg{aspect-ratio:3/4;background:var(--tile);display:grid;place-items:center;color:#cfcbc4;font-size:80px;overflow:hidden}
+.info{padding:28px 24px 48px}.info h1{font-size:14px;font-weight:500;margin:0 0 6px}.info p{max-width:42ch;color:var(--mut);text-transform:none;letter-spacing:.01em;font-size:13px}
+.sizes{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:26px 0}
+.sizes button{border:1px solid var(--line);padding:14px 0}.sizes button[aria-pressed=true]{border-color:var(--fg);background:var(--fg);color:#fff}
+.btn{display:block;width:100%;background:var(--fg);color:#fff;padding:16px;text-align:center}.btn:disabled{opacity:.5}
+.sec{padding:28px 24px 64px;max-width:980px}.sec h2{font-weight:500;font-size:13px;margin:0 0 24px}
+.sec p{text-transform:none;letter-spacing:.01em;font-size:13px;max-width:60ch;color:#333}
+#overlay{position:fixed;inset:0;background:rgba(0,0,0,.35);opacity:0;pointer-events:none;transition:.25s;z-index:30}
+#overlay.on{opacity:1;pointer-events:auto}
+#drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);background:#fff;z-index:40;transform:translateX(100%);transition:.3s;display:flex;flex-direction:column}
+#drawer.on{transform:none}
+#drawer .hd{display:flex;justify-content:space-between;padding:20px 24px;border-bottom:1px solid var(--line)}
+#lines{flex:1;overflow:auto;padding:0 24px}
+.line{display:flex;justify-content:space-between;gap:12px;padding:18px 0;border-bottom:1px solid var(--line)}.line small{color:var(--mut)}
+.qty button{width:28px;height:28px;border:1px solid var(--line)}
+#sum{padding:20px 24px;border-top:1px solid var(--line)}#sum div{display:flex;justify-content:space-between;padding:3px 0}#sum .t{font-weight:500;padding:10px 0 16px}
+.form{display:grid;gap:14px;max-width:520px}.form label{display:grid;gap:6px;color:var(--mut)}
+.form input{padding:13px;border:1px solid var(--line);font:inherit;letter-spacing:.02em;text-transform:none;color:var(--fg);border-radius:0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.co{display:grid;gap:40px;padding:28px 24px 64px}@media(min-width:900px){.co{grid-template-columns:1fr 1fr}}
+.row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--line)}
+.notice{padding:28px 24px;background:var(--tile);margin:0 6px}
+footer{border-top:1px solid var(--line);padding:40px 24px 56px;display:grid;grid-template-columns:repeat(2,1fr);gap:28px;color:var(--mut)}
+@media(min-width:900px){footer{grid-template-columns:2fr 1fr 1fr 1fr}}
+footer b{color:var(--fg);font-weight:500;display:block;margin-bottom:10px}footer a{display:block;padding:2px 0}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--fg);color:#fff;padding:12px 18px;z-index:60;display:none}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
+</style></head>
+<body>
+<header><nav><a href="#/">SHOP</a><a href="#/page/about">ABOUT</a></nav><a class="logo" href="#/">404 SOCIETY</a><nav class="r"><a id="acct" href="#/account">ACCOUNT</a><button id="bagbtn" aria-haspopup="dialog">BAG (<span id="count">0</span>)</button></nav></header>
+<main id="app" tabindex="-1"><div class="sec"><p>Loading…</p></div></main>
+<footer><div><b>404 SOCIETY</b>Wear your identity.</div><div><b>HELP</b><a href="#/page/shipping">Shipping</a><a href="#/page/returns">Returns</a><a href="#/page/contact">Contact</a></div><div><b>LEGAL</b><a href="#/page/privacy">Privacy</a><a href="#/page/terms">Terms</a></div><div><b>BUILD</b>v3 · saleor</div></footer>
+<div id="overlay"></div>
+<aside id="drawer" role="dialog" aria-label="Shopping bag" aria-hidden="true"><div class="hd"><b>BAG</b><button id="close" aria-label="Close bag">CLOSE</button></div><div id="lines"></div><div id="sum"></div></aside>
+<div class="toast" id="toast" role="status"></div>
+<script>
+const $=s=>document.querySelector(s),app=$('#app');
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const inr=n=>'₹'+Number(n).toLocaleString('en-IN');
+let P=[],ship={threshold:2000,fee:69},cart=[],size=null,user=null,addr=null;
+try{cart=JSON.parse(localStorage.getItem('404cart')||'[]')}catch(e){}
+cart=(Array.isArray(cart)?cart:[]).filter(i=>i&&i.id&&i.v&&Number.isInteger(i.qty));
+const toast=m=>{const t=$('#toast');t.textContent=m;t.style.display='block';setTimeout(()=>t.style.display='none',2600)};
+const save=()=>{try{localStorage.setItem('404cart',JSON.stringify(cart))}catch(e){}renderBag()};
+const pr=id=>P.find(p=>p.id===id),vr=i=>pr(i.id)?.variants.find(v=>v.id===i.v);
+const img=(p,c)=>p.image?`<img src="${esc(p.image)}" alt="${esc(p.name)}" loading="lazy">`:'404';
+const pages={about:['ABOUT','404 Society makes contemporary essentials for people who define their own style. Fewer pieces, better cloth, made to order.'],
+shipping:['SHIPPING','Orders are made to order and ship in 5–9 working days across India. Shipping is free on orders up to ₹2,000. Orders above ₹2,000 have a ₹69 shipping charge.'],
+returns:['RETURNS','Placeholder: add your returns and exchange policy here.'],contact:['CONTACT','Placeholder: add your support email and phone here.'],
+privacy:['PRIVACY','Placeholder: add your privacy policy here.'],terms:['TERMS','Placeholder: add your terms of sale here.']};
+const totals=()=>{const sub=cart.reduce((a,i)=>a+Math.round((vr(i)?.price||0)*100)*i.qty,0)/100,sh=sub>ship.threshold?ship.fee:0;return{sub,sh,total:sub+sh}};
+function renderBag(){$('#count').textContent=cart.reduce((a,i)=>a+i.qty,0);
+$('#lines').innerHTML=cart.length?cart.map((i,k)=>{const p=pr(i.id),v=vr(i);return p&&v?`<div class="line"><div>${esc(p.name)}<br><small>SIZE ${esc(v.label)} · ${inr(v.price)}</small></div><div class="qty"><button data-q="${k}" data-d="-1" aria-label="Decrease">−</button> ${i.qty} <button data-q="${k}" data-d="1" aria-label="Increase">+</button></div></div>`:''}).join(''):'<p style="padding:24px 0;color:#767676">YOUR BAG IS EMPTY</p>';
+const t=totals();$('#sum').innerHTML=cart.length?`<div><span>SUBTOTAL</span><span>${inr(t.sub)}</span></div><div><span>SHIPPING</span><span>${t.sh?inr(t.sh):'FREE'}</span></div><div class="t"><span>TOTAL</span><span>${inr(t.total)}</span></div><a class="btn" href="#/checkout" id="gocheck">CHECKOUT</a>`:''}
+const bag=on=>{$('#drawer').classList.toggle('on',on);$('#overlay').classList.toggle('on',on);$('#drawer').setAttribute('aria-hidden',String(!on))};
+function home(){return `<section class="hero"><h1>WEAR YOUR<br>IDENTITY</h1><a class="link" href="#shop">SHOP THE COLLECTION</a></section><div class="bar" id="shop"><span>NEW IN</span><span>${P.length} ITEMS</span></div><div class="grid">${P.map(p=>`<a class="tile" href="#/p/${esc(p.id)}"><div class="img">${img(p)}</div><div class="meta"><span>${esc(p.name)}</span><span>${inr(p.price)}</span></div></a>`).join('')}</div>`}
+function product(id){const p=pr(id);if(!p)return nf();size=null;document.title=p.name+' — 404 SOCIETY';
+return `<div class="pd"><div class="pimg">${img(p)}</div><div class="info"><h1>${esc(p.name)}</h1><div>${inr(p.price)}</div><p>${esc(p.description)}</p><div class="sizes" role="group" aria-label="Size">${p.variants.map(v=>`<button data-s="${esc(v.id)}" aria-pressed="false" ${v.available?'':'disabled title="Out of stock"'}>${esc(v.label)}</button>`).join('')}</div><button class="btn" id="add" data-id="${esc(p.id)}">ADD</button><p style="margin-top:18px">Made to order · Free shipping up to ₹2,000</p></div></div>`}
+const nf=()=>`<div class="sec"><h2>NOT FOUND</h2><a class="link" href="#/">BACK TO SHOP</a></div>`;
+const signin=(next,msg)=>`<div class="sec"><h2>${msg}</h2><p>Sign in with your Google account to continue.</p><br><a class="btn" style="max-width:360px" href="/api/auth/google${next?'?next='+next:''}">CONTINUE WITH GOOGLE</a></div>`;
+const renderUser=()=>{$('#acct').textContent=user?((user.name||'').split(' ')[0]||'ACCOUNT').toUpperCase():'ACCOUNT'};
+async function account(){if(!user)return signin('','SIGN IN');let os=[],ad=null;
+try{const [a,o]=await Promise.all([fetch('/api/account'),fetch('/api/orders')]);if(a.ok)ad=(await a.json()).address;if(o.ok)os=(await o.json()).orders}catch(e){}
+return `<div class="sec"><h2>ACCOUNT</h2><div class="row"><span>NAME</span><span>${esc(user.name)}</span></div><div class="row"><span>EMAIL</span><span>${esc(user.email)}</span></div><div class="row"><span>SAVED ADDRESS</span><span style="text-align:right">${ad?esc([ad.firstName,ad.lastName].filter(Boolean).join(' '))+'<br>'+esc(ad.address1)+', '+esc(ad.city)+' '+esc(ad.zip):'SAVED AT CHECKOUT'}</span></div><br><button class="link" id="signout">SIGN OUT</button><h2 style="margin-top:48px">ORDERS</h2>${os.length?os.map(o=>`<a class="row" href="#/account/order/${esc(o.id)}"><span>${esc(o.id)} · ${esc(String(o.createdAt||'').slice(0,10))}</span><span>${inr(o.amount)} · ${esc(o.status)}</span></a>`).join(''):'<p>NO ORDERS YET.</p>'}</div>`}
+async function orderDetail(id){if(!user)return signin('','SIGN IN');let o=null;try{const r=await fetch('/api/orders?id='+encodeURIComponent(id));if(r.ok)o=(await r.json()).order}catch(e){}
+if(!o)return `<div class="sec"><h2>ORDER NOT FOUND</h2><a class="link" href="#/account">BACK TO ACCOUNT</a></div>`;
+return `<div class="sec"><h2>ORDER ${esc(o.id)}</h2><div class="row"><span>STATUS</span><span>${esc(o.status)}</span></div>${o.items.map(i=>`<div class="row"><span>${esc(i.name)} · ${esc(i.size)} × ${i.qty}</span><span>${inr(i.price*i.qty)}</span></div>`).join('')}<div class="row"><span>SHIPPING</span><span>${o.shipping?inr(o.shipping):'FREE'}</span></div><div class="row"><b>TOTAL</b><b>${inr(o.amount)}</b></div><br><a class="link" href="#/account">BACK TO ACCOUNT</a></div>`}
+function checkout(){if(!cart.length)return `<div class="sec"><h2>YOUR BAG IS EMPTY</h2><a class="link" href="#/">CONTINUE SHOPPING</a></div>`;if(!user)return signin('checkout','SIGN IN TO CHECK OUT');const t=totals(),A=addr||{};
+const V={fn:A.firstName,ln:A.lastName,ph:A.phone,a1:A.address1,a2:A.address2,ci:A.city,st:A.province,zp:A.zip};
+const f=(id,l,x='')=>`<label>${l}<input id="${id}" value="${esc(V[id]||'')}" ${x}></label>`;
+return `<div class="co"><form class="form" id="cf" novalidate><b>DELIVERY</b><div class="two">${f('fn','FIRST NAME','autocomplete="given-name"')}${f('ln','LAST NAME','autocomplete="family-name"')}</div><p style="margin:0">SIGNED IN AS ${esc(user.email)}</p>${f('ph','MOBILE (10 DIGITS)','inputmode="numeric" maxlength="10" autocomplete="tel-national"')}${f('a1','ADDRESS','autocomplete="address-line1"')}${f('a2','APARTMENT, LANDMARK (OPTIONAL)','autocomplete="address-line2"')}<div class="two">${f('ci','CITY','autocomplete="address-level2"')}${f('st','STATE','autocomplete="address-level1"')}</div>${f('zp','PIN CODE','inputmode="numeric" maxlength="6" autocomplete="postal-code"')}<button class="btn" id="pay">PAY SECURELY</button></form>
+<div><b>ORDER</b>${cart.map(i=>{const p=pr(i.id),v=vr(i);return p&&v?`<div class="row"><span>${esc(p.name)} · ${esc(v.label)} × ${i.qty}</span><span>${inr(v.price*i.qty)}</span></div>`:''}).join('')}<div class="row"><span>SHIPPING</span><span>${t.sh?inr(t.sh):'FREE'}</span></div><div class="row"><b>TOTAL</b><b>${inr(t.total)}</b></div></div></div>`}
+async function order(id){if(!user){app.innerHTML=signin('','SIGN IN TO VIEW YOUR ORDER');return}app.innerHTML='<div class="sec"><h2>ORDER</h2><p id="os">Confirming your payment…</p></div>';
+for(let i=0;i<10;i++){try{const r=await fetch('/api/order-status?order_id='+encodeURIComponent(id)),d=await r.json(),el=$('#os');if(!el)return;
+if(['PAID','FULFILLING','FULFILLED'].includes(d.status)){cart=[];save();el.innerHTML='PAYMENT CONFIRMED. THANK YOU.<br>ORDER '+esc(d.id)+' IS BEING PREPARED.<br><br><a class="link" href="#/">CONTINUE SHOPPING</a>';return}
+if(d.status==='FAILED'){el.innerHTML='PAYMENT WAS NOT COMPLETED. YOU HAVE NOT BEEN CHARGED.<br><br><a class="link" href="#/checkout">TRY AGAIN</a>';return}}catch(e){}
+await new Promise(r=>setTimeout(r,3000))}
+const el=$('#os');if(el)el.textContent='WE ARE STILL CONFIRMING YOUR PAYMENT. CHECK AGAIN SHORTLY. ORDER '+id}
+async function route(){const [,a,b,c]=(location.hash||'#/').replace(/^#\/?/,'#/').split('/');document.title='404 SOCIETY — Wear Your Identity';let h;
+if(!a)h=home();else if(a==='p')h=product(b);else if(a==='checkout')h=checkout();else if(a==='account')h=b==='order'?await orderDetail(c):await account();else if(a==='order'){order(b);scrollTo(0,0);return}
+else if(a==='page'&&pages[b])h=`<div class="sec"><h2>${pages[b][0]}</h2><p>${esc(pages[b][1])}</p></div>`;else h=nf();
+app.innerHTML=h;if(!/^#shop/.test(location.hash))scrollTo(0,0)}
+async function pay(e){e.preventDefault();const v=id=>$('#'+id).value.trim(),btn=$('#pay');
+const body={customer:{firstName:v('fn'),lastName:v('ln'),phone:v('ph'),address1:v('a1'),address2:v('a2'),city:v('ci'),province:v('st'),zip:v('zp')},items:cart.map(({v,qty})=>({variantId:v,qty}))};
+btn.disabled=true;btn.textContent='PLEASE WAIT…';
+try{const r=await fetch('/api/checkout',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(body)}),d=await r.json();if(r.status===401){user=null;renderUser();location.hash='#/checkout';route();return}if(!r.ok)throw new Error(d.error||'Checkout failed');
+await Cashfree({mode:d.mode}).checkout({paymentSessionId:d.payment_session_id,redirectTarget:'_self'})}catch(err){toast(err.message);btn.disabled=false;btn.textContent='PAY SECURELY'}}
+document.addEventListener('click',e=>{const t=e.target.closest('button,a');if(!t)return;
+if(t.id==='bagbtn'){bag(true);return}if(t.id==='signout'){fetch('/api/auth/logout',{method:'POST'}).then(()=>{user=null;addr=null;renderUser();if(location.hash==='#/'||!location.hash)route();else location.hash='#/'});return}if(t.id==='close'||t.id==='gocheck'){bag(false);return}
+if(t.dataset.s){size=t.dataset.s;document.querySelectorAll('[data-s]').forEach(b=>b.setAttribute('aria-pressed',String(b===t)))}
+if(t.id==='add'){if(!size)return toast('SELECT A SIZE');const id=t.dataset.id,x=cart.find(i=>i.id===id&&i.v===size);x?x.qty=Math.min(10,x.qty+1):cart.push({id,v:size,qty:1});save();bag(true)}
+if(t.dataset.q!==undefined){const i=cart[t.dataset.q];i.qty+=+t.dataset.d;if(i.qty<1)cart.splice(t.dataset.q,1);if(i.qty>10)i.qty=10;save();if(location.hash==='#/checkout')route()}});
+document.addEventListener('submit',e=>{if(e.target.id==='cf')pay(e)});
+$('#overlay').addEventListener('click',()=>bag(false));
+addEventListener('keydown',e=>{if(e.key==='Escape')bag(false)});
+addEventListener('hashchange',route);
+(async()=>{const q=new URLSearchParams(location.search),oid=q.get('order_id');
+if(oid&&q.get('payment')==='return'&&/^[\w-]{1,50}$/.test(oid))history.replaceState(null,'','/#/order/'+oid);
+try{const r=await fetch('/api/products'),d=await r.json();P=d.products;ship=d.shipping}catch(e){P=[];app.innerHTML='<div class="sec"><p>Could not load products. Please refresh.</p></div>'}
+try{const r=await fetch('/api/auth/me');user=(await r.json()).user;if(user){const a=await fetch('/api/account');if(a.ok)addr=(await a.json()).address}}catch(e){}
+cart=cart.filter(i=>vr(i));renderUser();save();route()})();
+</script></body></html>

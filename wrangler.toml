@@ -1,0 +1,20 @@
+name = "404-society-store"
+main = "src/worker.js"
+compatibility_date = "2025-09-01"
+keep_vars = true
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
+run_worker_first = ["/api/*"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "404-society-orders"
+database_id = "REPLACE_WITH_D1_DATABASE_ID"
+
+[vars]
+SALEOR_API_URL = "https://YOUR-STORE.saleor.cloud/graphql/"   # your Saleor GraphQL address
+SALEOR_CHANNEL = "default-channel"                              # channel slug from Saleor > Configuration > Channels
+CASHFREE_ENV = "sandbox"   # change to "production" when you go live
+QIKINK_ENV = "sandbox"     # change to "live" when you go live
